@@ -26,7 +26,7 @@ class Operaciones():
    def Complemento(self):
        print("Se ha seleccionado la opción 4.")
        conjuntoComplemento = []
-       for elemento in conjunto2:
+       for elemento in conjuntoUniversal:
            if elemento not in conjunto1:
                conjuntoComplemento.append(elemento)
        print(conjuntoComplemento)
@@ -38,6 +38,12 @@ class Operaciones():
        print("Se ha seleccionado la opción 5.")
 
 
+   def Salir(self):
+       print("Adios")
+
+
+
+
    def default_case(self):
        print("Opción no válida.")
 
@@ -45,6 +51,8 @@ class Operaciones():
 operaciones = Operaciones()
 conjunto1 = []
 conjunto2 = []
+conjunto3 = []
+conjuntoUniversal = []
 
 
 switch = {
@@ -72,11 +80,40 @@ while True:
        conjunto2.append(entrada)
 
 
+while True:
+   entrada = input("Ingrese un elemento para el tercer conjunto (end; para terminar): ")
+   if entrada == "end;":
+       break;
+   else:
+       conjunto3.append(entrada)
+
+
+
+
+for elemento in conjunto1:
+   conjuntoUniversal.append(elemento)
+
+
+for elemento in conjunto2:
+   conjuntoUniversal.append(elemento)
+
+
+for elemento in conjunto3:
+   conjuntoUniversal.append(elemento)
+
+
 print(conjunto1)
 print(conjunto2)
+print(conjunto3)
+print(conjuntoUniversal)
 
 
-operacion = input("Ingrese una opción:"
+
+
+while True:
+
+
+   operacion = input("Ingrese una opción:"
                      "\n 1. Union"
                      "\n 2. Interseccion"
                      "\n 3. Diferencia"
@@ -85,8 +122,12 @@ operacion = input("Ingrese una opción:"
                      "\n 6. Salir")
 
 
-opcionSeleccionada = switch.get(int(operacion))
-opcionSeleccionada()
+   opcionSeleccionada = switch.get(int(operacion))
+   opcionSeleccionada()
+
+
+   if operacion == "6":
+       break
 
 
 
